@@ -23,7 +23,7 @@
                 {
                   if (($row['Date_start'] <= $selected_date) && ($row['Date_end'] >= $selected_date)){
                     
-                    $sql_get_Car = "SELECT * FROM lb_pdo_rent.cars WHERE ID_Cars= :FID_Car";
+                    $sql_get_Car = "SELECT * FROM lb_car.rent WHERE ID_Cars= :FID_Car";
                     $sth = $dbh->prepare($sql_get_Car);
                     $sth->execute(array(':FID_Car' => $row['FID_Car']));
                     $cursor = $sth->fetchAll();
